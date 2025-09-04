@@ -1,0 +1,68 @@
+/* Loader pantalla completa */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+
+/* Ocultar loader */
+.fade-out {
+  opacity: 0;
+}
+
+/* Logo con brillo */
+.loader-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 2.5rem;
+  filter: brightness(0.5);
+  transition: filter 0.5s;
+}
+
+/* Rombos contenedor */
+.loader-rombos-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Rombos */
+.loader-rombo {
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 0, 34, 0.24);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transform: scale(0.6);
+  opacity: 0.3;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 0, 34, 0.3);
+}
+
+/* Rombos activos */
+.loader-rombo.active {
+  background: linear-gradient(135deg, rgb(255, 32, 62), rgba(0, 0, 0, 0.5));
+  opacity: 1;
+  box-shadow: 0 0 6px #fff, 0 0 12px #fff;
+  transform: scale(1);
+  transition: all 0.2s;
+}
+
+/* Porcentaje */
+.loader-percentage {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 6px #ff0022, 0 0 10px rgba(255,100,100,0.5);
+}
+

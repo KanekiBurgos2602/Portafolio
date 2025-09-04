@@ -1,0 +1,51 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo global */
+html, body {
+  height: 100%;
+  background-color: #000;
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.95) 35%,
+      rgba(0,0,0,0.95) 35%,
+      rgba(0,0,0,0.7) 65%,
+      rgba(0,0,0,0.5) 100%,
+      rgba(0,0,0,0.2) 100%,
+      rgba(0,0,0,0) 100%
+    ),
+    url('/src/assets/Lappland_The_Decadenza_HG.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-attachment: fixed;
+}
+
+/* Formularios */
+button, input, select, textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Fade-in global */
+.fade-in {
+  animation: fadeInPage 1s ease forwards;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

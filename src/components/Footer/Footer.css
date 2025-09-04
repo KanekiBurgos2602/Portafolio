@@ -1,0 +1,16 @@
+/* Estilos para el Footer */
+.footer {
+  color: #f0f0f0;            
+  text-align: right;
+  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;           
+}

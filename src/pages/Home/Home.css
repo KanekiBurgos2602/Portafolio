@@ -1,0 +1,42 @@
+/* Contenedor de logo lateral + texto */
+.home-left-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 40vh;  
+  margin-left: 5vw;
+  z-index: 1;
+}
+
+/* Logo lateral */
+.home-left-logo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+/* Texto lateral */
+.home-left-text {
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+  font-family: 'Orbitron', sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+/* Nombre */
+.home-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Rol */
+.home-role {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 0.3rem;
+}

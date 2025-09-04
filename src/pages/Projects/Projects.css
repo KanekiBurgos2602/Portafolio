@@ -1,0 +1,199 @@
+/* Fondo y estructura */
+.projects-page {
+  min-height: 100vh;
+  padding-top: 6rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Título principal */
+.projects-title {
+  text-align: center;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
+/* Título de cada proyecto */
+.project-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* Título expandido */
+.expanded-title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  margin-bottom: 1.2rem;
+}
+
+/* Grid de proyectos */
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin: 7rem 5vw;
+  justify-items: center;
+  align-items: center;
+  place-items: center;
+  justify-content: center;
+}
+@media (max-width: 1100px) { .projects-content { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .projects-content { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .projects-content { grid-template-columns: 1fr; } }
+
+/* Proyecto normal */
+.project-slot {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 32px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.project-slot:not(.expanded):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+}
+.project-slot img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.637);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Overlay y expandido */
+.project-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.452);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.4s;
+}
+.project-overlay.fade-out {
+  animation: fadeOutOverlay 0.4s forwards;
+}
+.project-slot.expanded {
+  width: 700px;
+  height: auto;
+  background: #000;
+  box-shadow: 0 2px 32px rgba(192,192,192,0.5);
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  cursor: default;
+  transition: width 0.4s, background 0.4s, box-shadow 0.4s;
+  padding: 2rem 1rem 2.5rem 1rem;
+  animation: fadeInSlot 0.4s;
+}
+.project-slot.expanded.fade-out {
+  animation: fadeOutSlot 0.4s forwards;
+}
+@media (max-width: 900px) {
+  .project-slot.expanded {
+    width: 95vw;
+    min-width: 320px;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+}
+
+/* Botón cerrar */
+.project-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.project-close-btn:hover {
+  color: #ff4b4b;
+}
+
+/* Imagen y descripción expandida */
+.expanded-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.expanded-img {
+  max-width: 60%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+.expanded-desc {
+  width: 90%;
+  color: #fff;
+  font-size: 1.15rem;
+  text-align: center;
+  margin: 2.5rem auto 1rem auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+}
+@media (max-width: 900px) {
+  .expanded-row { flex-direction: column; align-items: center; }
+  .expanded-img { max-width: 90vw; max-height: 220px; }
+}
+
+/* Animaciones */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInSlot {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+@keyframes fadeOutOverlay {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fadeOutSlot {
+  from { opacity: 1; transform: scale(1);}
+  to { opacity: 0; transform: scale(0.95);}
+}
+@keyframes fadeInGrid {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.projects-content.fade-in-grid {
+  animation: fadeInGrid 0.5s ease-out;
+}
