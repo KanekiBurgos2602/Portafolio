@@ -6,7 +6,7 @@ import Contact from './pages/Contact/Contact.jsx';
 
 export default function RouterWrapper() {
   return (
-    <BrowserRouter basename="/portafolio">
+    <BrowserRouter basename="/Portafolio">
       <Routes>
         <Route path="/" element={<HomeLoader />} />
         <Route path="/projects" element={<Projects />} />
