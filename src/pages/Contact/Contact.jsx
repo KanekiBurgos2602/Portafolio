@@ -1,7 +1,7 @@
 import NavBar from '../../components/Navbar/Navbar.jsx';
 import './Contact.css';
 import '../../index.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/Logo.png';
 
 const Contact = () => {
   return (
